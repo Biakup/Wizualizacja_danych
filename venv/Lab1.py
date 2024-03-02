@@ -1,6 +1,20 @@
 import sys
 
-
+'''
+Zadania 
+Zad 1. Napisz skrypt, który pobiera od użytkownika zdanie i liczy ilość słów. Użyj funkcji input 
+Zad 2. Napisz skrypt gdzie pobierzesz trzy liczby całkowite, gdzie wykonasz obliczenia: ab + c. 
+Użyj funkcji readline() i write()). 
+Zad3. Napisz skrypt, który sprawdzi czy wczytany napis jest palindromem. 
+Zad4. Napisz skrypt, który sprawdzi czy wczytana liczba jest pierwsza. 
+Zad5. Napisz skrypt, który sprawdzi ile jest liczb doskonałych do liczby 1000. 
+Zad 6. Napisz skrypt, gdzie stworzysz listę składającą się z liczb typu int i float. Następnie za pomocą użycia pętli 
+for podnieś każdą liczbę do kwadratu. 
+Zad 7. Napisz skrypt, który za pomocą pętli while pobiera 10 liczb, następnie dodaje do listy tylko parzyste liczby. 
+Zad 8. Napisz skrypt, w którym utworzysz listę z elementami dowolnego typu. Utwórz słownik, gdzie klucze będą
+poszczególnymi elementami z listy, a wartość to ilość wystąpień klucza w liście. Następnie usuń wszystkie elementy
+ze słownika, które nie będą liczbami. 
+'''
 def zad():
     print('Wprowadzenie')
     lista = [1, 2, 3, 4, 2]
@@ -117,12 +131,22 @@ def zadanie2():
 def zadanie3():
     print('Sposób pierwszy: ')
     napis = str(input('Podaj napis: '))
+    napis = napis.lower()
     if napis == napis[::-1]:
         print('Jest to palindrom')
     else:
         print('To nie jest palindrom')
 
     print('Sposób drugi: ')
+    dlugosc = len(napis)
+    for i in range(dlugosc // 2):
+        if napis[i] != napis[dlugosc - i - 1]:
+            print('To nie jest palindrom')
+            break
+        else:
+            print('Jest to palindrom')
+            break
+
 def zadanie4():
     liczba = int(input('Podaj liczbe: '))
 
@@ -147,12 +171,47 @@ def zadanie5():
     print(f'Ilosc liczb doskonalych do 100 to: {ilosc}')
 
 
+def zadanie6():
+    lista = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5]
+
+    for i in range(len(lista)):
+        lista[i] = lista[i] ** 2
+    print(f'Lista po podniesieniu do kwadratu: {lista}')
 
 
+def zadanie7():
+    parzyste_liczby = []
+    licznik = 0
+
+    while licznik < 10:
+        liczba = int(input('Podaj liczbę: '))
+        if liczba % 2 == 0:
+            parzyste_liczby.append(liczba)
+        licznik = licznik + 1
+    print(f'Gotowa liczba parzystych liczb: {parzyste_liczby}')
 
 
+def zadanie8():
+    lista_elementow = [1, 'a', 2, 'b', 3, 'a', 4, 'c', 5, 'b', 1, 2, 3, 'a','a']
+    slownik = {}
 
+    for element in lista_elementow:
+        if element in slownik:
+            slownik[element] += 1
+        else:
+            slownik[element] = 1
 
+    print(f'Słownik przed: {slownik}')
+
+    klucze_do_usuniecia = []
+    for klucz in slownik:
+        if not isinstance(klucz, (int, float)):
+            klucze_do_usuniecia.append(klucz)
+
+    for klucz in klucze_do_usuniecia:
+        del slownik[klucz]
+
+    print(f'Słownik po: {slownik}')
 
 
 
@@ -165,8 +224,12 @@ def main():
     # zadanie2()
     # zadanie3()
     # zadanie4()
-    zadanie5()
+    # zadanie5()
+    # zadanie6()
+    # zadanie7()
+    zadanie8()
 
 
 if __name__ == '__main__':
     main()
+
