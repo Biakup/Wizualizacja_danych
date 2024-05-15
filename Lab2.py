@@ -15,6 +15,8 @@ Zad 8. Napisz skrypt, w którym utworzysz listę z elementami dowolnego typu. Ut
 poszczególnymi elementami z listy, a wartość to ilość wystąpień klucza w liście. Następnie usuń wszystkie elementy
 ze słownika, które nie będą liczbami. 
 '''
+
+
 def zad():
     print('Wprowadzenie')
     lista = [1, 2, 3, 4, 2]
@@ -103,15 +105,15 @@ def zad3():
     print(6**(1/2))
     print(pow(6, 2))
 
+
 def zadanie1():
-    def licz_slowa(zdanie):
-        ile_slow = len(zdanie.split())
+    def licz_slowa(z):
+        ile_slow = len(z.split())
         return ile_slow
 
     zdanie = str(input('Napisz swoje zdanie: '))
     print(f'Zdanie: {zdanie}')
     print(f'Zdanie: {licz_slowa(zdanie)}')
-
 
 
 def zadanie2():
@@ -146,6 +148,7 @@ def zadanie3():
         else:
             print('Jest to palindrom')
             break
+
 
 def zadanie4():
     liczba = int(input('Podaj liczbe: '))
@@ -192,7 +195,7 @@ def zadanie7():
 
 
 def zadanie8():
-    lista_elementow = [1, 'a', 2, 'b', 3, 'a', 4, 'c', 5, 'b', 1, 2, 3, 'a','a']
+    lista_elementow = [1, 'a', 2, 'b', 3, 'a', 4, 'c', 5, 'b', 1, 2, 3, 'a', 'a']
     slownik = {}
 
     for element in lista_elementow:
@@ -212,7 +215,6 @@ def zadanie8():
         del slownik[klucz]
 
     print(f'Słownik po: {slownik}')
-
 
 
 def main():

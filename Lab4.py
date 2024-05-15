@@ -1,17 +1,19 @@
 import math
 import random
 
+
 def zad1():
     p = round((math.e ** 4 - math.log2(34)) ** (1 / 3), 2)
     print(f'Przykład 1: {p}')
-    p2 = round((math.log(20) + math.cos(math.radians(45)) + math.e) ** (1 / 3), 2)
+    p2 = round((math.log(20) + math.cos(45) + math.e) ** (1 / 3), 2)
     print(f'Przykład 2: {p2}')
-    p3 = round(((math.log(20) / math.log(3)) + math.sin(math.radians(45)) * (5 / 8)) ** (1 / 4), 2)
+    p3 = round(((math.log(20) / math.log(3)) + math.sin(45) * (5 / 8)) ** (1 / 4), 2)
     print(f'Przykład 3: {p3}')
-    p4 = round((math.log(23) / math.log(3)) + ((math.sin(math.radians(34)) + 5) ** (1 / 3)), 2)
+    p4 = round((math.log(23) / math.log(3)) + ((math.sin(34) + 5) ** (1 / 3)), 2)
     print(f'Przykład 4: {p4}')
-    p5 = round((math.log2(23) + math.pi + math.sin(math.radians(56))) ** (1 / 4), 2)
+    p5 = round((math.log2(23) + math.pi + math.sin(56)) ** (1 / 4), 2)
     print(f'Przykład 5: {p5}')
+
 
 def zad2():
     x = int(input("Podaj jak wysoka ma być wieża (max 10): "))
@@ -32,7 +34,7 @@ def zad3():
 
 
 def zad4():
-    x = random.randint(1,100)
+    x = random.randint(1, 100)
     print(f'Losowa liczba z przedziału 1-100: {x}')
 
     y = random.random()
@@ -40,10 +42,10 @@ def zad4():
 
 
 def zad5():
-    def wektorki(n):
-        for i in range(n):
+    def wektorki(w):
+        for i in range(w):
             suma = 0
-            for j in range(n):
+            for j in range(w):
                 x = random.randint(1, 100)
                 suma += x
                 print(x, end=' ')
@@ -51,7 +53,6 @@ def zad5():
 
     n = int(input("Podaj n: "))
     print(wektorki(n))
-
 
 
 def main():

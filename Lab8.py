@@ -3,8 +3,9 @@ import pandas as pd
 
 def main():
     print('Zadanie 1')
-    df = pd.read_excel('/datasets/datasets/imiona.xlsx')
-    print(df.head())
+    data = pd.read_excel('/datasets/datasets/imiona.xlsx')
+    df = pd.DataFrame(data)
+    print(df)
 
     print('Zadanie 2')
     print('Zadanie 2.1')
@@ -47,8 +48,9 @@ def main():
 
     print('Zadanie 3')
 
-    df2 = pd.read_csv('/datasets/datasets/zamowienia.csv', sep=';', parse_dates=['Data zamowienia'])
-    print(df2.head())
+    dataa = pd.read_csv('/datasets/datasets/zamowienia.csv', sep=';', parse_dates=['Data zamowienia'])
+    df2 = pd.DataFrame(dataa)
+    print(df2)
 
     print('Zadanie 3.1')
     u_sprzedawca = df2['Sprzedawca'].unique()
