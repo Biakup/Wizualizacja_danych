@@ -125,7 +125,6 @@ def zad4():
     df = pd.read_csv('/datasets/datasets/zamowienia.csv', sep=';')
     print(df)
 
-    # Grupowanie danych po kolumnie 'Sprzedawca' i liczenie ilości zamówień
     grupa_sprzedawca = df.groupby('Sprzedawca').size()
     print(grupa_sprzedawca)
     plt.figure(figsize=(10, 6))
